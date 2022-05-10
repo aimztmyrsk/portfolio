@@ -1,0 +1,942 @@
+@charset "utf-8";
+
+/*
+theme Name: WordPressテーマbyGeekLoungeStaff（テーマの名前を記入）
+Author: yamamoto ami
+Description: original theme
+version： 1.0.5
+*/
+
+
+/*cssのリセット*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, abbr, address, cite, code, del, dfn, em, img,
+ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd,
+ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
+figcaption, figure, footer, header, hgroup, menu, nav, section,
+summary, time, mark, audio, video {
+  font-size: 98%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+ins {
+  text-decoration: none;
+  color: #000;
+  background-color: #ff9;
+}
+
+mark {
+  font-weight: bold;
+  font-style: italic;
+  color: #000;
+  background-color: #ff9;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  cursor: help;
+  border-bottom: 1px dotted;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+/* ここから */
+
+body {
+    font-family: 'YuGothic', "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+    line-height: 2;
+    margin: 0;
+    padding: 0;
+    color: gray;
+    color: #939597;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, h4, p, a, li, span {
+    font-family: 'YuGothic';
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    font-weight: bolder;
+}
+
+h4 {
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+header {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    background: white;
+    padding-top: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+/* top */
+
+.top-wrapper {
+    position: relative;
+    height: 900px;
+    border-bottom: solid 1px gray;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.name-wrapper {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+
+.name-wrapper p {
+    font-size: 4rem;
+    line-height: 1.3;
+    /* font-family: 'Alegreya Sans SC', sans-serif; */
+    font-family: 'Caveat', cursive;
+    color: rgb(77, 77, 77);
+}
+
+.text-front {
+    position: relative;
+    z-index: 2;
+}
+
+.text-back {
+    color: #F5DF4D;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    display: none;
+}
+
+.box-wrapper a {
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.box1, .box2 {
+    display: none;
+}
+
+.scroll-down {
+    position: absolute;
+    top: 75%;
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
+
+.scroll-down a {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    z-index: 2;
+    display: inline-block;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-decoration: none;
+    color: gray;
+    padding-bottom: 3rem;
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.scroll-down a span {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 46px;
+    height: 46px;
+    margin-left: -23px;
+    border: 1px solid gray;
+    border-radius: 100%;
+    box-sizing: border-box;
+  }
+.scroll-down a span::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: '';
+    width: 16px;
+    height: 16px;
+    margin: -12px 0 0 -8px;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    box-sizing: border-box;
+  }
+.scroll-down a span::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    content: '';
+    width: 44px;
+    height: 44px;
+    box-shadow: 0 0 0 0 rgba(255,255,255,.1);
+    border-radius: 100%;
+    opacity: 0;
+    -webkit-animation: sdb 3s infinite;
+    animation: sdb 3s infinite;
+    box-sizing: border-box;
+  }
+  @-webkit-keyframes sdb {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    60% {
+      box-shadow: 0 0 0 60px rgba(122, 122, 122, 0.1);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes sdb {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    60% {
+      box-shadow: 0 0 0 60px rgba(122, 122, 122, 0.1);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+
+
+/* service */
+
+.skills-wrapper {
+    width: 70%;
+    margin: auto;
+    margin-top: 9rem;
+    margin-bottom: 9rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills-wrapper h1 {
+    font-size: 4.5rem;
+    text-align: right;
+    /* color: rgba(255,255,255,0.8); */
+    line-height: 1;
+    /* text-shadow:
+    1px 0 0 black,
+    0 1px 0 black,
+    -1px 0 0 black,
+    0 -1px 0 black; */
+    /* margin-right: -5rem; */
+    /* font-family: 'Permanent Marker', cursive; */
+    font-family: 'Caveat', cursive;
+}
+
+.skills-wrapper h3 {
+    font-size: 1rem;
+    text-align: center;
+    color: gray;
+    font-weight: lighter;
+    letter-spacing: 1rem;
+    margin-top: .8rem;
+    /* margin-right: -5rem; */
+    font-family: "M PLUS 1p";
+}
+
+.skills-list {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skills-contents  {
+    margin-bottom: 10%;
+}
+
+.skills-bottom {
+    margin-bottom: 10%;
+}
+
+.skills-title {
+    padding-top: 1rem;
+    border-bottom: 1px solid gray;
+    padding-bottom: .2rem;
+    margin-bottom: .8rem;
+    overflow:visible;
+}
+
+.skills-contents input {
+    display: none;
+}
+
+.skills-contents .skills-content {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s;
+}
+
+.skills-contents input:checked ~ .skills-content {
+    padding: 1rem 0;
+    height: auto;
+    opacity: 1;
+    width: 80%;
+}
+
+.border {
+    border-bottom: 1px solid gray;
+    padding-bottom: .2rem;
+    margin-bottom: .8rem;
+}
+
+.skills-wrapper span {
+    display: block;
+    width: 100%;
+    border: solid 1px gray;
+    padding: 1rem;
+  }
+
+  .skills-wrapper span:hover {
+    opacity: .6;
+  }
+
+  /* アコーディオン */
+  .accordion-container .accordion-title {
+    position: relative;
+    margin: 1rem 0;
+    padding: 0.625em 0.625em 0.625em 2em;
+    background-color: #fff;
+    font-size: 1rem;
+    font-weight: normal;
+    color: gray;
+    cursor: pointer;
+    border: solid 1px gray;
+  }
+  .accordion-container .accordion-title:hover,
+  .accordion-container .accordion-title:active,
+  .accordion-title.open {
+    background-color: gray;
+    color: white;
+  }
+
+  .accordion-container .accordion-title::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    width: 15px;
+    height: 2px;
+    /* 縦線に */
+    transform: rotate(90deg);
+    background: gray;
+    transition: all .3s ease-in-out;
+  }
+
+  .accordion-container .accordion-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    /* 横線 */
+    width: 15px;
+    height: 2px;
+    background: gray;
+    transition: all .2s ease-in-out;
+  }
+
+  .accordion-container .accordion-title:hover::before,
+  .accordion-container .accordion-title:hover::after {
+      background: white;
+  }
+
+  .accordion-container .accordion-title:active::before,
+  .accordion-container .accordion-title.open::before {
+    transform: rotate(135deg);
+    background: #fff;
+  }
+
+  .accordion-container .accordion-title:active::after,
+  .accordion-container .accordion-title.open::after {
+    transform: rotate(45deg);
+    background: #fff;
+  }
+
+  .accordion-content {
+    display: none;
+    padding-left: 2.3125em;
+  }
+
+  /* CSS for CodePen */
+  .accordion-container {
+    width: 50%;
+  }
+
+/*  
+  delayScroll
+
+  .delayScroll-content {
+    opacity: 0;
+  }
+
+  .fadeUp {
+    animation-name:fadeUpAnime;
+    animation-duration:0.5s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeUpAnime{
+    from {
+      opacity: 0;
+    transform: translateY(100px);
+    }
+
+    to {
+      opacity: 1;
+    transform: translateY(0);
+    }
+  }
+
+*/
+
+
+/* about */
+
+
+
+.about-wrapper {
+    width: 90%;
+    position: relative;
+}
+
+.my-profile {
+    background: #dadada;
+    background: #F5DF4D;
+    padding-left: 10%;
+    /* margin-right: 10%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.white {
+    background : white;
+    width: 60%;
+    margin: 5%;
+    padding: 5%;
+}
+
+.my-profile h1 {
+    position: absolute;
+    top: 90px;
+    left: -120px;
+    transform: rotate(270deg);
+    font-size: 5.5rem;
+    color: rgba(255,255,255,0.4);
+}
+
+.my-profile h4 {
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+}
+
+
+.my-name {
+    font-size: 2rem;
+    letter-spacing: .8rem;
+    font-family: "M PLUS 1p";
+}
+
+.my-date {
+    width: 70%;
+}
+
+.my-career {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.my-career p {
+    line-height: 3;
+}
+
+.my-photo-parent {
+    width: 20%;
+    position: absolute;
+    top: 4rem;
+    right: -10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+}
+
+.my-photo {
+    width: 100%;
+    /* padding-top: 100%; */
+    border-radius: 50%;
+    border: solid 1px gray;
+    background: white;
+}
+
+.sns-icons {
+    width: 70%;
+}
+
+.rotateY{
+	animation-name:rotateYAnime;
+	animation-duration:1s;
+	animation-fill-mode:forwards;
+}
+
+@keyframes rotateYAnime{
+	from{
+		transform: rotateY(0);
+		}
+	to{
+		transform: rotateY(-360deg);
+		}
+}
+
+
+
+/* ボタン全体 */
+.flowbtn12{
+    font-family:'Verdana',sans-serif;
+    border-radius: 4px;
+    display:inline-block;
+    width:90%;
+    font-size:.8rem;
+    transition:.4s;
+    text-decoration:none;
+    margin-left: -0.8rem;
+}
+/* ボタン内テキストマウスホバー時 */
+.flowbtn12:hover{
+    color:#fff!important;
+    text-decoration:none;
+}
+/* Twitter */
+.flowbtn12.fl_tw2{
+    border:solid 1px #55acee;
+    color:#55acee;
+}
+    /* Twitterマウスホバー時 */
+.flowbtn12.fl_tw2:hover{
+    border:solid 1px #55acee;
+    background:#55acee;
+}
+ /* Instagram */
+.flowbtn12.insta_btn2{
+    border:solid 1px #c6529a;
+    color:#c6529a;
+}
+/* Instagramマウスホバー時 */
+.flowbtn12.insta_btn2:hover{
+    border:solid 1px #c6529a;
+    background:#c6529a;
+}
+ /* Facebook */
+.flowbtn12.fl_fb2{
+    border:solid 1px #3b5998;
+    color:#3b5998;
+}
+/* Facebookマウスホバー時 */
+.flowbtn12.fl_fb2:hover{
+    border:solid 1px #3b5998;
+    background:#3b5998;
+}
+
+    /* メールアイコン */
+    .flowbtn12.fl_ma2{
+    border:solid 1px rgb(26, 26, 26);
+    color: rgb(26,26,26);
+    }
+    /* メールアイコンマウスホバー時 */
+    .flowbtn12.fl_ma2:hover{
+    border:solid 1px rgb(26,26,26);
+    background:rgb(26, 26, 26);
+    }
+    /* ボタン内テキスト調整 */
+.flowbtn12 span{
+    font-size: .65rem;
+    position:relative;
+    left:8px;
+    bottom:2px;
+}
+    /* ulタグの内側余白を０にする */
+ul.snsbtniti2{
+    padding:0!important;
+}
+/* ボタン全体の位置 */
+.snsbtniti2{
+    display:flex;
+    list-style: none;
+}
+/* ボタン同士の余白 */
+.snsbtniti2 li{
+    flex:0 0 23%;
+    text-align:center !important;
+}
+
+/* works */
+
+.works-wrapper {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 8rem;
+}
+
+.works-wrapper h1 {
+    margin: 2rem 0;
+    font-size: 4rem;
+    font-family: 'Caveat', cursive;
+}
+
+.works-contents {
+    margin: 3rem 0;
+}
+
+.works-contents h2 {
+    font-size: 1.5rem;
+    color: gray;
+    line-height: 1.4;
+    padding-left: 16px;
+    border-left: solid 5px #dadada;
+    margin-bottom: 2rem;
+}
+
+.works-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.works-title a {
+    text-decoration: none;
+    color: gray;
+    font-size: .8rem;
+    padding-top: .5rem;
+}
+
+.works-title a:hover {
+    opacity: .6;
+}
+
+.work-img img {
+    width: 100%;
+    border: solid 1px #dadada;
+    margin-bottom: 2rem;
+}
+
+.test-site1 {
+    border: gray solid 1px;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    height: 400px;
+}
+
+/*==================================================
+スライダーのためのcss
+===================================*/
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width:94%;
+    margin:0 auto;
+}
+
+.slider img {
+    width:60vw;/*スライダー内の画像を60vwにしてレスポンシブ化*/
+    height:auto;
+    border: solid 1px #dadada;
+}
+
+.slider .slick-slide {
+	transform: scale(0.85);/*左右の画像のサイズを80%に*/
+	transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+	opacity: 0.6;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+	transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+	opacity: 1;/*透過なし*/
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left: -1.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+    text-align:center;
+	margin:20px 0 0 0;
+}
+
+.slick-dots li {
+    display:inline-block;
+	margin:0 5px;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width:8px;/*ドットボタンのサイズ*/
+    height:8px;/*ドットボタンのサイズ*/
+    display:block;
+    border-radius:50%;
+    background:#ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+    background:#333;/*ドットボタンの現在地表示の色*/
+}
+
+
+/* contact */
+
+.contact-wrapper {
+    width: 60%;
+    margin: auto;
+    position: relative;
+}
+
+.contact-wrapper h1 {
+    font-size: 6rem;
+    color: rgba(100, 100, 100, 0.3);
+    line-height: 1;
+    position: absolute;
+    top: 0;
+    right: -33%;
+}
+
+.contact-wrapper h2 {
+    padding-top: 8rem;
+    padding-bottom: 1rem;
+    font-size: 2.3rem;
+    /* font-family: "Hannari";
+    font-family: "Nico Moji"; */
+    font-family: "M PLUS 1p";
+    text-align: center;
+}
+
+
+.gray {
+    background: #dadada;
+}
+
+
+.wpcf7 input[type="submit"] {
+    background: gray;
+    color: white;
+    display: block;
+    margin: auto;
+    margin-bottom: 4rem;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border: none;
+}
+
+.wpcf7 input[type="submit"]:hover {
+    background: transparent;
+    color: gray;
+    transition: all .5s ease; /*ボタンの色が変化する時間（0.5秒）*/
+    border: solid 1px gray;
+}
+
+.elementor-widget-wrap.elementor-element-populated {
+    padding: 0;
+}
+
+
+/* contactform template */
+
+.table-res-form {
+    width: 100%;
+}
+
+.table-res-form th, .table-res-form td {
+    padding: 1rem 0;
+}
+
+.table-res-form th {
+    width: 20%;
+    text-align: left;
+    vertical-align: middle;
+    font-family: 'YuGothic';
+    font-weight: lighter;
+}
+
+
+/*各入力フォームスタイリング*/
+.table-res-form input[type="text"],
+.table-res-form input[type="email"],
+.table-res-form textarea {
+    border: 1px #dadada solid;
+    padding: .8rem;
+    border-radius: 5px;
+    margin-bottom: .5rem;
+    width: 100%;
+}
+/*入力欄にフォーカスしたら変化*/
+.table-res-form input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    background: #e0e0e0;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+
+/* footer */
+
+footer {
+    display: none;
+}
+
+.foot-wrapper {
+    background: gray;
+}
+
+.foot-wrapper a {
+    display: block;
+    margin: 6rem 0;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.foot-list {
+    width: 40%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.foot-wrapper a:hover {
+    opacity: .6;
+}
+
+
+/* start */
+
+.start {
+	background: gray;
+    opacity: .6;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 9000;
+}
+.start p {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+	z-index: 9999;
+    color: white;
+    font-size: 2.2rem;
+    font-family: 'Homemade Apple', cursive;
+}
