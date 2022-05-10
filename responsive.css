@@ -1,0 +1,75 @@
+@media (max-width: 900px) {
+    .top-wrapper {
+        background-image: none;
+        position: relative;
+    }
+
+    .box-wrapper {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 65%;
+        top: 5%;
+    }
+
+    .box1,
+    .box2 {
+        height: 160px;
+        width: 160px;
+        border-radius: 50%;
+    }
+
+    .about-box a, 
+    .works-box a, 
+    .skills-box a,
+    .contact-box a {
+        position: unset;
+        width: 160px;
+        height: 160px;
+        line-height: 160px;
+    }
+
+
+    #circle0, #circle2, #circle5 {
+        background: white;
+        background: rgba(255, 255, 255, 0.6);
+        border: solid 1px gray;
+    }
+
+    #circle1, #circle3, #circle4 {
+        background: gray ;
+        background: rgba(119, 119, 119, 0.6);
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    /* about */
+
+    .snsbtniti2 {
+        flex-direction: column;
+    }
+
+    .sns-icons li {
+        padding: .5rem;
+    }
+
+
+    /* contact */
+
+    /* 　　    thとtdをブロック化して幅100％にして、縦積み */
+        .table-res-form th, .table-res-form td {
+            width: 100%;
+            display: block;
+        }
+    /* 　　　　　th（項目名）欄の不要な余白削除・テキスト左寄せ */
+        .table-res-form th {
+            padding-bottom: 0;
+            text-align: left;
+        }
+    /* 　　　　　不要な最終行の左のthを非表示にする */
+        .table-res-form .empty {
+            display: none;
+        }
+    }
