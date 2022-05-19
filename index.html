@@ -1,61 +1,31 @@
-<!DOCTYPE html><!--htmlで書かれていることを宣言-->
-<html lang="ja"><!--日本語のサイトであることを指定-->
+<!DOCTYPE html>
+<html lang="ja">
 
 <head prefix="og: http://ogp.me/ns#">
-<script src="/js/page.js"></script>
-<meta charset="utf-8"><!--エンコードがUTF-8であることを指定-->
-<meta name="viewport" content="width=device-width, initial-scale=1.0 ">
-<!-- font -->
-<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
-<link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
-<!-- slickのcss -->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-<!--viewportの設定-->
-<!-- <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" /> -->
-<!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/dot.css" type="text/css" /> -->
-<!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/responsive.css" type="text/css" /> -->
-<!-- スタイルシートの呼び出し -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"><!--font-awesomeのスタイルシートの呼び出し-->
-<!-- <?php wp_head(); ?> -->
-
+    <script src="/js/page.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+    <!-- slickのcss -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <!-- スタイルシートの呼び出し -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"><!--font-awesomeのスタイルシートの呼び出し-->
+    <!-- 
+    <script src="/js/page.js"></script> -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="dot.css">
-    <script type="text/javascript" src="page.js"></script>
+    <link rel="stylesheet" href="responsive.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
-<header>
-    <!-- <div class="header-inner">
-        <?php
-        if(is_home()||is_front_page()) {
-            $title_tag_start = '<h1 class="site-title">';
-            $title_tag_end = '</h1>';
-        } else {
-            $title_tag_start = '<p class="site-title">';
-            $title_tag_end = '</p>';
-        }
-        ?>
-        <div class="site-title-wrap">
-            <?php echo $title_tag_start; ?>
-                <?php if(is_front_page()): ?>
-                    <a href="<?php echo home_url(); ?>">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/2.png">
-                    </a>
-                <?php else: ?>
-                    <a href="<?php echo home_url(); ?>">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/1.png">
-                    </a>
-                <?php endif; ?>
-            <?php echo $title_tag_end; ?>
-        </div>
-    </div>   -->
-</header>
-<!-- <script type="text/javascript" src="js/page.js"></script> -->
 <div class="top-wrapper">
     <div class="name-wrapper">
         <div class="text-front"><p>YAMAMOTO<br>AMI<br>portfolio</p></div>
@@ -143,14 +113,9 @@
         <div class="works-contents">
             <div class="works-title">
                 <h2>01.geek温泉</h2>
-                <a href="https://aimztmyrsk.github.io/geekOnsen/" target="_blank">実際のサイトはこちらから→</a>
+                <a href="http://geek-onsen.local/" target="_blank">実際のサイトはこちらから→</a>
             </div>
-            
-            <!-- <div class="work-img">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/geek-onsen-top.png">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/geek-info.png">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/geek-access.png">
-            </div> -->
+
             <ul class="slider">
                 <li><img src="geek-onsen-top.png"></li>
                 <li><img src="geek-info.png"></li>
@@ -170,11 +135,10 @@
         </div>
     </div>
     <div class="gray">
-        <div id="contact" class="contact-wrapper">
-            <h1>contact</h1>
-            <h2>お問い合わせ</h2>
-            <?php echo do_shortcode('[contact-form-7 id="81" title="contactform ja"]'); ?>
-        </div>
+      <div class="contact-wrapper">
+        <h1>お問い合わせ</h1>
+        <h2>お問い合わせ</h2>
+      </div>
     </div>
     <div class="foot-wrapper">
         <div class="foot-list">
@@ -185,34 +149,6 @@
         </div>
     </div>
 </div>
-
-
-
-
-<footer id="footer" class="footer">
-    <div class="footer-inner">
-      <div class="footer-logo site-title-wrap">
-        <?php echo $title_tag_start; ?>
-            <a href="<?php echo home_url(); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/2.png">
-            </a>
-        <?php echo $title_tag_end; ?>
-      </div>
-      <div class="footer-nav-wrap">
-        <?php wp_nav_menu( array(
-                'theme_location' => 'footer-nav' ,
-                'container' => 'nav' ,
-                'container_class' => 'footer-nav' ,
-                'container_id' => 'footer-nav' ,
-                'fallback_cb' => ''
-              )); ?>
-      </div>
-      <div class="copyright">
-          <p>©︎ 2021 <?php bloginfo('name'); ?></p>
-      </div>
-    </div><!--end footer-inner-->
-  </footer>
-
 
 <script src="page.js"></script>
 
